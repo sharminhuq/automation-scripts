@@ -19,7 +19,7 @@ test('Login', async ({ page }) => {
     await page.locator("//input[@placeholder='Withdraw Amount']").fill('');
     await page.locator("//input[@placeholder='Withdraw Amount']").press('Control+A');
     await page.locator("//input[@placeholder='Withdraw Amount']").press('Backspace');
-    await page.locator("//input[@placeholder='Withdraw Amount']").fill(withdrawalAmount);
+    await page.locator("//input[@placeholder='Withdraw Amount']").fill('50');
     await page.locator("//textarea[@placeholder='Optional Description']").fill('I happily withdraw 200USD from my vendor account');
     await page.locator("(//button[@class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#0130B7] text-primary-foreground hover:!bg-blue-700 h-10 px-4 py-2 withdraw-button w-full mt-3'])[1]").click();
     await page.waitForTimeout(10000);
