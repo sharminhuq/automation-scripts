@@ -16,7 +16,7 @@ test.describe("Complete Mail Verification Flow", () => {
     await page.locator("(//button[contains(text(),'Buy Now')])[2]").click();
 
     // Fill in the form with test details
-    await page.locator("//input[@id='email']").fill('sharmin.huq+Tota1@jqws3qxe.mailosaur.net'); // Use the dynamic email
+    await page.locator("//input[@id='email']").fill('sharmin.huq+so@jqws3qxe.mailosaur.net'); // Use the dynamic email
     await page.locator("//input[@id='cardName']").fill("Sharmin Huq");
     await page.locator("//input[@id='cardNumber']").fill("4242 4242 4242 4242");
     await page.locator("//input[@id='expiryDate']").fill("02/34");
@@ -27,7 +27,7 @@ test.describe("Complete Mail Verification Flow", () => {
     await page.locator("//input[@id='state']").fill("Dhaka");
     await page.locator("//input[@id='postCode']").fill("34567");
     await page.locator("//input[@id='check']").check();
-    await page.locator("//button[normalize-space()='Subscribe']").click();
+    await page.locator("//button[normalize-space()='Confirm Payment']").click();
     await page.locator("(//button[@class='inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-[#0130B7] text-primary-foreground hover:!bg-blue-700 h-10 px-4 py-2 rounded-full mt-3'])[1]").click();
 
    
@@ -38,37 +38,28 @@ test.describe("Complete Mail Verification Flow", () => {
     await page.locator("//input[@id='password']").fill("Bangladesh1#");
     await page.locator("//button[normalize-space()='Log in']").click();
     await page.locator('text=Go to inbox').click(); // Assuming "Go to inbox" is visible as text
-    await page.locator("//body[1]/div[2]/div[1]/div[1]/div[5]/main[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[1]").click();
+    await page.locator("//tbody/tr[1]/td[2]/div[1]").click();
+    await page.locator("//a[normalize-space()='Verify Email']").click();
+    await page.waitForTimeout(10000);
+    
+   
+    await page.locator("//input[@id='fullName']").fill("Sharmin Huq")
+    await page.locator("//input[@id='password']").fill("Bangladesh1#")
+    await page.locator("//input[@id='repeatPassword']").fill("Sharmin Huq")
+    await page.locator("//button[normalize-space()='Complete Registration']").click("")
 
-    await page.waitForTimeout(3000); // Wait for inbox page to load
+    await page.waitForTimeout(5000);
+    // await page.goto('https://www-develop.backtestdata.com/');
+    // await page.locator("(//span[@class='flex !text-start !justify-start lg:justify-center items-center pt-5'])[1]").click();
+    // await page.locator("//a[contains(@href,'/auth/login/')]//div[@role='link']").click();
+    await page.locator("//input[@id='username']").fill('sharmin.huq+so5@jqws3qxe.mailosaur.net');
+    await page.waitForSelector("//input[@id='password']");
+    await page.locator("//input[@id='password']").fill('Bangladesh1#');
+    await page.locator("//button[normalize-space()='Login']").click();
+    await page.waitForTimeout(10000);
+    await page.locator("(//span[@class='pl-2'])[1]").click()
+    await page.locator("//button[contains(text(),'Logout')]").click();
 
-    // Step 3: Fetch the first email in the inbox
-    const firstEmailLocator = page.locator('//div[@class="email-item"][1]'); // Locator for the first email
-    await firstEmailLocator.click(); // Click on the first email
-    // Wait for the email content to load
-    await page.waitForTimeout(3000);
-
-    // Step 4: Extract the verification link from the email content
-    const emailBody = await page.locator('.email-body').textContent(); // Assuming email body is within a .email-body element
-    const verificationLinkMatch = emailBody.match(/https?:\/\/[^\s]+/); // Match URLs in the email body
-
-    if (!verificationLinkMatch) {
-      throw new Error('Verification link not found in the email body.');
-    }
-
-    const verificationLink = verificationLinkMatch[0];
-    console.log('Verification Link:', verificationLink);
-
-    // Step 5: Navigate to the verification link
-    await page.goto(verificationLink); // Visit the link
-
-    // Wait for the page to indicate successful verification
-    await page.waitForSelector('text=Your account has been verified', { timeout: 30000 });
-
-    // Step 6: Verify success message
-    const successMessageVisible = await page.locator('text=Your account has been verified').isVisible();
-    expect(successMessageVisible).toBe(true); // Ensure the verification message is visible
-
-    console.log('Email verification completed successfully!');
+  
   });
 });
