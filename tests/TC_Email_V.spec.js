@@ -11,7 +11,7 @@ const serverId = "jqws3qxe";
 const dynamicEmail = `sharmin.huq+${new Date().getTime()}@${serverId}.mailosaur.net`;
 
 // Input variables for email and password
-const userEmail = process.env.USER_EMAIL || "sharmin.huq+finally2@jqws3qxe.mailosaur.net"; // Dynamic email input
+const userEmail = process.env.USER_EMAIL || "sharmin.huq+fast@jqws3qxe.mailosaur.net"; // Dynamic email input
 const userEmail2 = process.env.USER_EMAIL || "sharmin.huq@aitrade.ai";
 const userPassword = process.env.USER_PASSWORD || "Bangladesh1#"; // Dynamic password input
 
