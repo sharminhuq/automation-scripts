@@ -4,17 +4,17 @@ test('BD forget pass', async ({ page }) => {
 
 //TC Subscriber Login
 
-await page.goto('https://www-develop.tradecopy.io/');
+await page.goto('https://www.tradecopy.io/');
 await page.locator("(//span[@class='flex justify-center items-center'])[1]").click();
 await page.locator("//div[normalize-space()='Login']").click();
-await page.locator("//input[@id='username']").fill('sharmin.huq+subscriber5@aitrade.ai');
+await page.locator("//input[@id='username']").fill('sharmin.huq+pc@aitrade.ai');
 await page.waitForSelector("//input[@id='password']");
 await page.locator("//input[@id='password']").fill('Bangladesh1#');
 await page.waitForTimeout(3000);
 await page.locator("//button[normalize-space()='Login']").click();
 
 await page.locator("//span[@class='pl-0'][normalize-space()='Strategies']").click();
-await page.locator("//body[1]/div[1]/div[4]/section[1]/div[2]/div[2]/div[1]/div[1]/div[1]/section[1]/div[2]/div[1]/div[2]/div[2]/section[1]/div[5]/a[1]/div[1]/div[2]").click();
+await page.locator("//body/div/div/section/div/div/div/div/div/section/div/div[@dir='ltr']/div[@role='tabpanel']/div/section/div[1]/a[1]/div[1]").click();
 await page.locator("//button[normalize-space()='Subscribe']").click();
 await page.locator("//input[@id='check']").check();
 await page.locator("//button[normalize-space()='Launch']").click();

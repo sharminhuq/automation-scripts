@@ -9,13 +9,13 @@ const serverId = "jqws3qxe";
 
 
 const userEmail = process.env.USER_EMAIL || "sharmin.huq+two6@jqws3qxe.mailosaur.net"; 
-const userEmail2 = process.env.USER_EMAIL || "sharmin.huq@aitrade.ai";// Dynamic user email
+const userEmail2 = process.env.USER_EMAIL || "sharmin.huq@aitrade.ai"; // Dynamic user email
 const userPassword = process.env.USER_PASSWORD || "Bangladesh1#"; // Dynamic user password
 
 test.describe("Complete Mail Verification Flow", () => {
   test("Complete Signup and Verify Email", async ({ page }) => {
    
-    //Sign Up
+//Sign Up
     await page.goto("https://www-develop.backtestdata.com/");
     await page.locator("(//span[contains(text(),'Pricing')])[1]").click();
     await page.locator("(//button[contains(text(),'Buy Now')])[2]").click();
@@ -38,7 +38,7 @@ test.describe("Complete Mail Verification Flow", () => {
     await page.locator("//button[normalize-space()='Continue']").click();
     await page.locator("//input[@id='password']").fill(userPassword); 
     await page.locator("//button[normalize-space()='Log in']").click();
-    await page.locator("text=Go to inbox").click(); // "Go to email inbox" 
+    await page.locator("text=Go to inbox").click(); //Go to email inbox
     await page.locator("//tbody/tr[1]/td[2]/div[1]").click();
     await page.locator("//a[normalize-space()='Verify Email']").click();
     await page.waitForTimeout(10000);
