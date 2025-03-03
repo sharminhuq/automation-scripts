@@ -14,6 +14,14 @@ test('BD forget pass', async ({ page }) => {
     await page.locator("//button[normalize-space()='Submit']").click();
     await page.waitForTimeout(3000);
 
+    //Email Verification
+    await page.goto("https://webmail.migadu.com/")
+    await page.locator("//input[@placeholder='Email']").fill("sharmin.huq@aitrade.ai")
+    await page.locator("//input[@placeholder='Password']").fill("Umra_December1#")
+    await page.locator("//button[normalize-space()='Sign In']").click()
+    await page.locator("//input[@id='folderSearchInput']").fill(BDsearchMail)
+    await page.waitForTimeout(5000);
+
 
     //BD forget pass Admin
 

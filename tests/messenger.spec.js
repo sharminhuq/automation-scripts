@@ -9,15 +9,11 @@ test('Admin Login', async ({ page }) => {
     const passwordField = "Bangladesh1#";
     const repeatPasswordField = "Bangladesh1#";
     const description = `As an experienced trader, I specialize in [mention your specific markets, like forex, stocks, crypto, etc.],
-    leveraging insights and proven strategies to maximize growth and manage risk effectively.
-    I am committed to transparency, disciplined trading practices, and continual market analysis
-    to help you achieve your financial goals. Join my trade journey to benefit from a well-informed,
-    responsive trading approach.`;
+    leveraging insights and proven strategies to maximize growth and manage risk effectively.`;
     const strategyName = "pc1";
     const strategySearch = "pc";
 
  //TC register for vendor
-
 
     // await page.goto("https://www.tradecopy.io/");
     // await page.locator("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > header:nth-child(1) > section:nth-child(1) > div:nth-child(4) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1) > svg:nth-child(1)").click();
@@ -128,9 +124,5 @@ test('Admin Login', async ({ page }) => {
 
     //Checking email signal is receiving or not
     await page.goto('https://webmail.migadu.com/');
-
-
-
-
 
 });
