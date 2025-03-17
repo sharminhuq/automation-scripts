@@ -31,28 +31,28 @@ test('Admin Login', async ({ page }) => {
  
 
 //Login as a vendor
-    await page.goto('https://www.tradecopy.io/');
-    await page.locator("(//*[name()='svg'][@role='img'])[2]").click();
-    await page.locator("//div[normalize-space()='Login']").click();
-    await page.locator("//input[@id='username']").fill(emailField);
-    await page.waitForSelector("//input[@id='password']");
-    await page.locator("//input[@id='password']").fill(passwordField);
-    await page.waitForTimeout(3000);
-    await page.locator("//button[normalize-space()='Login']").click();
-    await page.waitForTimeout(5000);
+    // await page.goto('https://www.tradecopy.io/');
+    // await page.locator("(//*[name()='svg'][@role='img'])[2]").click();
+    // await page.locator("//div[normalize-space()='Login']").click();
+    // await page.locator("//input[@id='username']").fill(emailField);
+    // await page.waitForSelector("//input[@id='password']");
+    // await page.locator("//input[@id='password']").fill(passwordField);
+    // await page.waitForTimeout(3000);
+    // await page.locator("//button[normalize-space()='Login']").click();
+    // await page.waitForTimeout(5000);
 
     //create new strategy
-    await page.locator("//span[@class='pl-0'][normalize-space()='Strategies']").click();
-    await page.locator("//button[normalize-space()='Create Strategy']").click()
-    await page.locator("//input[@id='name']").fill(strategyName)
-    await page.locator("//input[@id='credit']").fill('00')
-    await page.locator("(//div[@class='react-select__input-container css-19bb58m'])[1]").click()
-    await page.click("text=Forex");
-    await page.locator("(//div[@class='react-select__input-container css-19bb58m'])[2]").click()
-    await page.click("text=High Freq.");
-    await page.locator("(//div[@class='react-select__input-container css-19bb58m'])[3]").click()
-    await page.click("text=USDJPY")
-    await page.locator("//span[@class='m-auto']").click()
+    // await page.locator("//span[@class='pl-0'][normalize-space()='Strategies']").click();
+    // await page.locator("//button[normalize-space()='Create Strategy']").click()
+    // await page.locator("//input[@id='name']").fill(strategyName)
+    // await page.locator("//input[@id='credit']").fill('00')
+    // await page.locator("(//div[@class='react-select__input-container css-19bb58m'])[1]").click()
+    // await page.click("text=Forex");
+    // await page.locator("(//div[@class='react-select__input-container css-19bb58m'])[2]").click()
+    // await page.click("text=High Freq.");
+    // await page.locator("(//div[@class='react-select__input-container css-19bb58m'])[3]").click()
+    // await page.click("text=USDJPY")
+    // await page.locator("//span[@class='m-auto']").click()
 
     //Sending signal through Manual trading
     // await page.locator("(//span[@class='pl-0'][normalize-space()='Strategies'])[1]").click()
@@ -68,10 +68,9 @@ test('Admin Login', async ({ page }) => {
     // await page.waitForTimeout(2000);
 
     //TC copier account Login   
+
     await page.goto('https://www.tradecopy.io/');
     await page.locator("(//span[@class='flex justify-center items-center'])[1]").click();
-    await page.locator("//button[normalize-space()='Logout']").click()
-    await page.locator("button[class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-red-600 hover:bg-red-700']").click();
     await page.locator("//div[normalize-space()='Login']").click();
     await page.locator("//input[@id='username']").fill(emailField2);
     await page.waitForSelector("//input[@id='password']");
@@ -81,6 +80,7 @@ test('Admin Login', async ({ page }) => {
     await page.waitForTimeout(10000);
  
  // set messenger & strategy subscription
+
     await page.locator("//span[@class='pl-0'][normalize-space()='Strategies']").click();
     await page.locator("//span[normalize-space()='Filters']").click()
     await page.locator("//input[@id='Name']").check()
@@ -94,35 +94,36 @@ test('Admin Login', async ({ page }) => {
     await page.locator("//input[@id='check']").check();
     await page.locator("//button[normalize-space()='Launch']").click();
     await page.waitForTimeout(10000);
+    
 
     //Login as a vendor
-    await page.goto('https://www.tradecopy.io/');
-    await page.locator("(//span[@class='flex justify-center items-center'])[1]").click();
-    await page.locator("//button[normalize-space()='Logout']").click()
-    await page.locator("button[class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-red-600 hover:bg-red-700']").click();
-    await page.locator("//div[normalize-space()='Login']").click();
-    await page.locator("//input[@id='username']").fill(emailField);
-    await page.waitForSelector("//input[@id='password']");
-    await page.locator("//input[@id='password']").fill(passwordField);
-    await page.waitForTimeout(3000);
-    await page.locator("//button[normalize-space()='Login']").click();
-    await page.waitForTimeout(5000);
+    // await page.goto('https://www.tradecopy.io/');
+    // await page.locator("(//span[@class='flex justify-center items-center'])[1]").click();
+    // await page.locator("//button[normalize-space()='Logout']").click()
+    // await page.locator("button[class='inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-10 px-4 py-2 bg-red-600 hover:bg-red-700']").click();
+    // await page.locator("//div[normalize-space()='Login']").click();
+    // await page.locator("//input[@id='username']").fill(emailField);
+    // await page.waitForSelector("//input[@id='password']");
+    // await page.locator("//input[@id='password']").fill(passwordField);
+    // await page.waitForTimeout(3000);
+    // await page.locator("//button[normalize-space()='Login']").click();
+    // await page.waitForTimeout(5000);
 
     //Sending signal through Manual trading
-    await page.locator("(//span[@class='pl-0'][normalize-space()='Strategies'])[1]").click()
-    await page.locator("(//h1[normalize-space()='10034'])[1]").click()
-    await page.locator("(//button[normalize-space()='Manual Trading'])[1]").click()
-    await page.locator("//button[normalize-space()='Buy']").click()
-    await page.waitForTimeout(2000);
-    await page.locator("//button[normalize-space()='Sell']").click()
-    await page.waitForTimeout(2000);
-    await page.locator("//button[normalize-space()='Reverse']").click()
-    await page.waitForTimeout(2000);
-    await page.locator("//button[normalize-space()='Exit']").click()
-    await page.waitForTimeout(2000);
+    // await page.locator("(//span[@class='pl-0'][normalize-space()='Strategies'])[1]").click()
+    // await page.locator("(//h1[normalize-space()='10034'])[1]").click()
+    // await page.locator("(//button[normalize-space()='Manual Trading'])[1]").click()
+    // await page.locator("//button[normalize-space()='Buy']").click()
+    // await page.waitForTimeout(2000);
+    // await page.locator("//button[normalize-space()='Sell']").click()
+    // await page.waitForTimeout(2000);
+    // await page.locator("//button[normalize-space()='Reverse']").click()
+    // await page.waitForTimeout(2000);
+    // await page.locator("//button[normalize-space()='Exit']").click()
+    // await page.waitForTimeout(2000);
 
 
     //Checking email signal is receiving or not
-    await page.goto('https://webmail.migadu.com/');
+    // await page.goto('https://webmail.migadu.com/');
 
 });

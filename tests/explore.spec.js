@@ -47,4 +47,5 @@ test('Login and Withdraw with dynamic row selection', async ({ page }) => {
     await page.locator("text=Succeeded").click(); // Make sure 'Succeeded' text is visible and clickable
     await page.locator("//button[normalize-space()='Update Transaction']").click();
     await page.waitForTimeout(2000);
+    
 });

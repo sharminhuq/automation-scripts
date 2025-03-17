@@ -1,8 +1,8 @@
 const { test, expect } = require('@playwright/test');
 
 test('Login and Signup Test', async ({ page }) => {
-    const userEmail = process.env.USER_EMAIL || "sharmin.huq+BDFeatureTest@aitrade.ai"; 
-    const userPassword = process.env.USER_PASSWORD || "Bangladesh1#"; 
+    const userEmail = process.env.USER_EMAIL || "sharmin.huq+majorDalim@aitrade.ai"; 
+    const userPassword = process.env.USER_PASSWORD || "Bangladesh1##"; 
     const emailForVerification = "sharmin.huq@aitrade.ai";
     const emailPassword = "Umra_December1#";
 
@@ -39,7 +39,7 @@ test('Login and Signup Test', async ({ page }) => {
     await page.locator("//input[@id='postCode']").fill('34567');
     await page.locator("//input[@id='check']").check();
     await page.locator("//button[normalize-space()='Reactivate & Confirm Payment']").click();
-    await page.waitForTimeout(5000); // This should ideally be replaced with a `waitForSelector()` for a success message
+    await page.waitForTimeout(15000); // This should ideally be replaced with a `waitForSelector()` for a success message
 
     // Email Verification
     await page.goto("https://webmail.migadu.com/");
@@ -48,22 +48,22 @@ test('Login and Signup Test', async ({ page }) => {
     await page.locator("//input[@placeholder='Password']").fill(emailPassword);
     await page.locator("//button[normalize-space()='Sign In']").click();
     await page.waitForSelector("//input[@id='folderSearchInput']");
-    await page.locator("//input[@id='folderSearchInput']").fill('BDFeatureTest'); // Fixed issue here
-    await page.locator("//a[normalize-space()='bdfeaturetest']").click()
-    await page.locator("//div[contains(@title,'( https://u33809073.ct.sendgrid.net/ls/click?upn=u001.4qbIxdgpzzPBUxbyMPGypbLYlRQCfRtc0VzRbBzsw3sVKV-2BbA9cuRsNLmyqz1Upx9A4S_haKti60o1nT25gQO7KwQjCGogiydcQQ96V9P-2BFNCXzDwGYkNivPP-2BWFhz45IUuFPphc57Lv')]//div[contains(@title,'office@backtestdata.com')][normalize-space()='Backtest Data']").click()
+    await page.locator("//input[@id='folderSearchInput']").fill('majorDalim'); // Fixed issue here
+    await page.locator("//a[normalize-space()='majordalim']").click()
+    await page.locator("//div[normalize-space()='Welcome Back']").click()
     await page.locator("//a[normalize-space()='Reactivate Account']").click()
-    await page.waitForSelector("//input[@id='fullName']", { state: 'visible' });
+    
 
 
     // THIS  PART IS NOT WORKING, HAS TO FIXED
 
     
-    await page.locator("//input[@id='fullName']").fill('Sharmin Huq', { force: true });
-    await page.waitForSelector("//input[@id='password']", { state: 'visible' });
-    await page.locator("//input[@id='password']").fill('Bangladesh1#', { force: true });
-    await page.waitForSelector("//input[@id='repeatPassword']", { state: 'visible' });
-    await page.locator("//input[@id='repeatPassword']").fill('Bangladesh1#', { force: true });
-    await page.locator("//button[normalize-space()='Complete Registration']").click();
-    await page.waitForTimeout(5000);
+    // await page.locator("//input[@id='fullName']").fill('Sharmin Huq', { force: true });
+    // await page.waitForSelector("//input[@id='password']", { state: 'visible' });
+    // await page.locator("//input[@id='password']").fill('Bangladesh1#', { force: true });
+    // await page.waitForSelector("//input[@id='repeatPassword']", { state: 'visible' });
+    // await page.locator("//input[@id='repeatPassword']").fill('Bangladesh1#', { force: true });
+    // await page.locator("//button[normalize-space()='Complete Registration']").click();
+    // await page.waitForTimeout(5000);
 
 });

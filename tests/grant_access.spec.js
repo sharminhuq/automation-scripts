@@ -16,14 +16,15 @@ test('Login', async ({ page }) => {
 
 
     // Navigate to User Access Page
-await page.locator("//span[contains(@class,'font-medium text-sm')][normalize-space()='Users']").click();
-await page.waitForSelector("//h1[normalize-space()='10434']", { state: 'visible' });
-await page.locator("//h1[normalize-space()='10434']").click();
-await page.waitForSelector("(//button[normalize-space()='Products'])[1]", { state: 'visible' });
-await page.locator("(//button[normalize-space()='Products'])[1]").click();
-await page.waitForTimeout(3000);
+    await page.locator("//span[contains(@class,'font-medium text-sm')][normalize-space()='Users']").click();
+    await page.waitForSelector("//h1[normalize-space()='10434']", { state: 'visible' });
+    await page.locator("//h1[normalize-space()='10434']").click();
+    await page.waitForSelector("(//button[normalize-space()='Products'])[1]", { state: 'visible' });
+    await page.locator("(//button[normalize-space()='Products'])[1]").click();
+    await page.waitForTimeout(3000);
 
 // Plans to grant access
+
 const plans = ["Commodity", "Bonds", "Stocks", "Futures", "Cryptocurrencies", "Forex"];
 
 for (const plan of plans) {
