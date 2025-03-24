@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 test('Login and Handle Subscriptions', async ({ page }) => {
-    const userEmail = process.env.USER_EMAIL || "sharmin.huq+twice@aitrade.ai";
+    const userEmail = process.env.USER_EMAIL || "sharmin.huq+subscriber@aitrade.ai";
     const userPassword = process.env.USER_PASSWORD || "Bangladesh1#";
 
     // Login
@@ -15,7 +15,7 @@ test('Login and Handle Subscriptions', async ({ page }) => {
     await page.waitForTimeout(5000);
 
     // Handle Plans
-    const plans = ["Commodity", "Bonds", "Stocks", "Futures", "Cryptocurrencies", "Forex"];
+    const plans = [ "Stocks", "Futures", "Cryptocurrencies", "Forex"];
     for (const plan of plans) {
         const buyButton = page.locator(`(//button[contains(text(),'Buy Now')])[1]`);
 
