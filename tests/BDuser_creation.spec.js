@@ -1,8 +1,7 @@
 const { test, expect } = require('@playwright/test');
-
 test('Login and interact with "View All" button', async ({ page }) => {
     const userEmailAdmin = process.env.USER_EMAIL || "sharmin.huq+admin@aitrade.ai";
-    const createEmail = process.env.USER_EMAIL || "sharmin.huq+salu@aitrade.ai";
+    const createEmail = process.env.USER_EMAIL || "sharmin.huq+bolto@aitrade.ai";
     const userPassword = process.env.USER_PASSWORD || "Bangladesh1#"; 
     const password = process.env.USER_PASSWORD || "Bangladesh1#"; 
     const confirmpass = process.env.USER_PASSWORD || "Bangladesh1#"; 
@@ -28,4 +27,6 @@ test('Login and interact with "View All" button', async ({ page }) => {
     await page.locator("//input[@id='confirmPassword']").fill(confirmpass);
     await page.waitForTimeout(1000);
     await page.locator("//button[normalize-space()='Create User']").click();
+    await page.waitForTimeout(3000);
+
 });

@@ -72,7 +72,7 @@ test('Login and Signup Test', async ({ page }) => {
     await page.waitForTimeout(5000);
 
     console.log(await page.url()); // Debug: Check if URL is correct
-    if (await page.url().includes('verification-success')) { // Adjust based on actual URL
+    if (await page.url().includes('verification-success')) { 
         await page.locator('input[name="fullName"]').fill('Sharmin Huq');
         await page.locator('input[name="password"]').fill('Bangladesh1#');
         await page.locator('input[name="confirmPassword"]').fill('Bangladesh1#');
