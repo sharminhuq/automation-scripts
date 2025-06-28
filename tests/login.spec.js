@@ -14,7 +14,7 @@ test('Dynamic Login Test', async ({ page }) => {
     }
 
     // Select website based on ENV variable
-    const websiteChoice = process.env.WEBSITE_CHOICE || "1"; // Default to BD
+    const websiteChoice = process.env.WEBSITE_CHOICE || "1"; 
 
     try {
         if (websiteChoice === '1') {

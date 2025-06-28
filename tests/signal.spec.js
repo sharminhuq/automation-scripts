@@ -19,18 +19,18 @@ test('Admin Login', async ({ page }) => {
  //TC register for vendor
 
 
-    // await page.goto("https://www.tradecopy.io/");
-    // await page.locator("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > header:nth-child(1) > section:nth-child(1) > div:nth-child(4) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1) > svg:nth-child(1)").click();
-    // await page.locator("//div[contains(@class,'Main_url-query-button__8gH1s')]").click();
-    // await page.locator("(//div[@class='border-[#f7f7f7] shadow-2md w-[200px] h-40 text-center px-4 py-[13px] rounded-[28px] border-[3px] border-solid bg-[#fff] hover:bg-[#eff8ff] hover:cursor-pointer hover:border-[#0130b7] 2xs-l:mb-auto 2xs-l:mx-auto'])[1]").click()
-    // await page.locator("//div[contains(@class,'w-full text-center m-auto')]").click();
-    // await page.locator("//input[@id='fullName']").fill(fullNameField);
-    // await page.locator("//input[@id='email']").fill(emailField);
-    // await page.locator("//input[@id='password']").fill(passwordField);
-    // await page.locator("//input[@id='repeatPassword']").fill(repeatPasswordField);
-    // await page.locator("//textarea[@id='description']").fill(description);
-    // await page.locator("//button[normalize-space()='Complete Registration']").click();
-    // await page.waitForTimeout(5000);
+    await page.goto("https://www.tradecopy.io/");
+    await page.locator("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > header:nth-child(1) > section:nth-child(1) > div:nth-child(4) > div:nth-child(1) > button:nth-child(1) > span:nth-child(1) > svg:nth-child(1)").click();
+    await page.locator("//div[contains(@class,'Main_url-query-button__8gH1s')]").click();
+    await page.locator("(//div[@class='border-[#f7f7f7] shadow-2md w-[200px] h-40 text-center px-4 py-[13px] rounded-[28px] border-[3px] border-solid bg-[#fff] hover:bg-[#eff8ff] hover:cursor-pointer hover:border-[#0130b7] 2xs-l:mb-auto 2xs-l:mx-auto'])[1]").click()
+    await page.locator("//div[contains(@class,'w-full text-center m-auto')]").click();
+    await page.locator("//input[@id='fullName']").fill(fullNameField);
+    await page.locator("//input[@id='email']").fill(emailField);
+    await page.locator("//input[@id='password']").fill(passwordField);
+    await page.locator("//input[@id='repeatPassword']").fill(repeatPasswordField);
+    await page.locator("//textarea[@id='description']").fill(description);
+    await page.locator("//button[normalize-space()='Complete Registration']").click();
+    await page.waitForTimeout(5000);
 
  
 
@@ -59,17 +59,17 @@ test('Admin Login', async ({ page }) => {
     await page.locator("//span[@class='m-auto']").click()
 
     //Sending signal through Manual trading
-    // await page.locator("(//span[@class='pl-0'][normalize-space()='Strategies'])[1]").click()
-    // await page.locator("(//h1[normalize-space()='10034'])[1]").click()
-    // await page.locator("(//button[normalize-space()='Manual Trading'])[1]").click()
-    // await page.locator("//button[normalize-space()='Buy']").click()
-    // await page.waitForTimeout(2000);
-    // await page.locator("//button[normalize-space()='Sell']").click()
-    // await page.waitForTimeout(2000);
-    // await page.locator("//button[normalize-space()='Reverse']").click()
-    // await page.waitForTimeout(2000);
-    // await page.locator("//button[normalize-space()='Exit']").click()
-    // await page.waitForTimeout(2000);
+    await page.locator("(//span[@class='pl-0'][normalize-space()='Strategies'])[1]").click()
+    await page.locator("(//h1[normalize-space()='10034'])[1]").click()
+    await page.locator("(//button[normalize-space()='Manual Trading'])[1]").click()
+    await page.locator("//button[normalize-space()='Buy']").click()
+    await page.waitForTimeout(2000);
+    await page.locator("//button[normalize-space()='Sell']").click()
+    await page.waitForTimeout(2000);
+    await page.locator("//button[normalize-space()='Reverse']").click()
+    await page.waitForTimeout(2000);
+    await page.locator("//button[normalize-space()='Exit']").click()
+    await page.waitForTimeout(2000);
 
     //TC copier account Login   
     await page.goto('https://www.tradecopy.io/');

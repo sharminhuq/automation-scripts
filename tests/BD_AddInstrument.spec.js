@@ -20,30 +20,25 @@ test('Login and interact with "View All" button', async ({ page }) => {
     await page.locator("//button[normalize-space()='Add Instrument']").click()
     await page.waitForTimeout(1000);
     await page.locator("//input[@id='name']").fill("aks");
-    await page.locator("//button[@class='inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-//*[name()='svg']")
-    await page.locator("(//button[@type='submit'])[1]").hover();
-await page.locator("(//button[@type='submit'])[1]").click();
-
-
-
-
-
+    await page.waitForTimeout(1000);
+    await page.locator("(//*[name()='svg'][@class='lucide lucide-plus w-24 h-24'])[1]").click();
     await page.waitForTimeout(1000);
     await page.locator("//input[@id='name']").fill("aks2");
-    await page.locator("//button[@class='inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-//*[name()='svg']")
-    await page.locator("(//button[@type='submit'])[1]").hover();
-await page.locator("(//button[@type='submit'])[1]").click();
+    await page.locator("(//*[name()='svg'][@class='lucide lucide-plus w-24 h-24'])[1]").click();
 
 
-    await page.locator("//input[@id='name']").fill("bnp");
-    await page.locator("//button[@class='inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-//*[name()='svg']")
-    await page.locator("//button[@type='submit']//*[name()='svg']").click()
+    await page.locator("//input[@id='name']").fill("tutul");
+    await page.locator("(//*[name()='svg'][@class='lucide lucide-plus w-24 h-24'])[1]").click();
     await page.waitForTimeout(1000);
     await page.locator("//input[@id='name']").fill("vps");
-    await page.locator("//button[@class='inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-//*[name()='svg']")
-    await page.locator("//button[@type='submit']//*[name()='svg']").click()
+    await page.locator("(//*[name()='svg'][@class='lucide lucide-plus w-24 h-24'])[1]").click();
     await page.waitForTimeout(1000);
-
+    await page.locator("//input[@id='name']").fill("searchDelete");
+    await page.locator("(//*[name()='svg'][@class='lucide lucide-plus w-24 h-24'])[1]").click();
+    await page.waitForTimeout(1000);
+    await page.locator("//input[@id='name']").fill("Delenotworking");
+    await page.locator("(//*[name()='svg'][@class='lucide lucide-plus w-24 h-24'])[1]").click();
+    await page.waitForTimeout(1000);
 
     await page.locator("//button[normalize-space()='Submit']").click();
     await page.waitForTimeout(5000);
