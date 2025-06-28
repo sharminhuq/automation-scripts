@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "auto-playwright": "^1.16.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mailosaur": "^8.7.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "playwright test"
+  }
+}
